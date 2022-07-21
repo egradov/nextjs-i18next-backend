@@ -4,18 +4,22 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "locales": "node localesServer.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "i18next-chained-backend": "3.0.2",
+    "i18next-http-backend": "1.2.6",
     "next": "12.2.2",
-    "next-i18next": "^11.2.2",
+    "next-i18next": "10.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
     "eslint": "8.20.0",
-    "eslint-config-next": "12.2.2"
+    "eslint-config-next": "12.2.2",
+    "express": "^4.18.1"
   }
 }

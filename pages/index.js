@@ -4,6 +4,7 @@ import {useRouter} from "next/router";
 import {Footer} from "../src/components/Footer";
 import Link from "next/link";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {useTranslation} from "next-i18next";
 
 export async function getServerSideProps({locale}) {
     return {
@@ -16,6 +17,10 @@ export async function getServerSideProps({locale}) {
 
 export default function Home() {
     const router = useRouter()
+    const { ready } = useTranslation(['client-page', 'footer'])
+    if(!ready) {
+        return <div>Waiting...</div>
+    }
   return (
     <div className={styles.container}>
       <Head>
